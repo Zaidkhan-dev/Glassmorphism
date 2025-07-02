@@ -152,7 +152,29 @@ html, body{
 </div>
 </div>
 <script src="https://berkaytumal.github.io/FxFilterJS/FxFilter.js"></script>
-  <script src="script.js"></script>
+  <script>
+async function playVideo() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+    // Stop existing tracks if already playing (important on reloads)
+    if (vid.srcObject) {
+      vid.srcObject.getTracks().forEach(track => track.stop());
+    }
+
+    // Set new stream
+    vid.srcObject = stream;
+
+    // Use metadata event to ensure playback
+    vid.onloadedmetadata = function () {
+      vid.play();
+    };
+
+  } catch (error) {
+    console.error("Camera access error:", error);
+  }
+}
+</script>
 </body>
 
 </html>
