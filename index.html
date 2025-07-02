@@ -5,77 +5,154 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+html {
+  height: 100%;
+  width: 100%;
+}
+html, body{
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin:0;
+  overflow: hidden;
+  
+}
+.parent{
+  background-image: url("img.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  
+  
+  
+  
+  
+  
+}
+.welcome {
+  position: fixed ;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform:translate(-50%, -50%);
+  p{animation: fadeIn 3s;}
+  width: 100%;
+  height: 100%;
+  color: white;
+  
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  justify-content: center;
+  
+  backdrop-filter: blur(10px);
+  
+  
+
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  
+}
+@keyframes fadeIn {
+  from {
+    opacity:0;
+    }
+  to {
+    opacity: 1;
+    }
+  }
+.title{
+  height: 7%;
+  width: 80%;
+  position: relative;
+
+  border-radius: 20px;
+  
+  --fx-filter: blur(2px) contrast(1.2) liquid-glass(2, 10) saturate(1.2);
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.05) 100%);
+    box-shadow: 
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  
+    padding: 20px;
+}
+.workarea {
+  margin-top: 20px;
+  
+  height: 60%;
+  width: 80%;
+  position: relative;
+  z-index: 1;
+  
+  
+
+  border-radius: 20px;
+  --fx-filter: blur(2px) contrast(1.2) liquid-glass(20, 20) saturate(1.2);
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.05) 100%);
+    box-shadow: 
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  
+    padding: 20px;
+  }
+#video {
+  height: 100%;
+  width: 100%;
+  
+  
+
+  transform: scaleX(-1);
+  
+  
+}
+</style
 </head>
 
 <body>
-  <div class ="parent">
-    <div class="cp1">
-       <div class="c1">
-          
-       </div>
-       
-    </div>
-    <div class="cp2">
-       <div class="c2">
-          
-       </div>
-       
-    </div>
-    <div class="cp1">
-       <div class="c1">
-          
-       </div>
-       
-    </div>
-    <div class="cp2">
-       <div class="c2">
-          
-       </div>
-       
-    </div>
-    <div class="cp1">
-       <div class="c1">
-          
-       </div>
-       
-    </div>
-    <div class="cp2">
-       <div class="c2">
-          
-       </div>
-       
-    </div>
-    <div class="cp1">
-       <div class="c1">
-          
-       </div>
-       
-    </div>
-
-
-    <div class="logincard">
-       <div class="logincardact">
-       <strong>Zaid Khan</strong> <br />
-      Experienced in html,css,js,python,java,c++
-    </div>
-    </div>
-
-       
-    </div>
-  
+<div class="parent">
+  <div class="welcome">
+  <p>
+     Welcome to Air beats, <br /> an immersive gesture-powered music experience.
+  </p>
+    <p onclick="
+      document.querySelector('.welcome').style.display = 'none';
+      playVideo();">
+      <br />
+      
+       Click me to begin.
+    </p>
     
-
-
+    </div>
   
-
-
- 
-
-
-
-
+  <div class="title">
+     
+  </div>
+  <div class="workarea">
   
+     <video id="video" muted playsinline autoplay>
+     </video>
+  
+  
+  
+</div>
+</div>
+<script src="https://berkaytumal.github.io/FxFilterJS/FxFilter.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
